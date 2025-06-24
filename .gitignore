@@ -1,0 +1,8 @@
+
+BACKEND/node_modules/
+FRONTEND/node_modules/
+
+FRONTEND/.env
+BACKEND/.env
+help.txt
+helpppp.txt

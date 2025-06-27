@@ -4,7 +4,9 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": " nodemon app.js",
+    "build": "npm install && npm install --prefix FRONTEND && npm run build --prefix FRONTEND",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,7 +21,9 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.0",
-    "nanoid": "^5.1.5",
+    "nanoid": "^5.1.5"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }

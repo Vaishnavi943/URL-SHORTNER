@@ -10,8 +10,11 @@ import errorHandler from './src/utils/errorHandler.js';
 import cors from 'cors';
 import { attachUser } from './src/utils/attachUser.js';
 import cookieParser from 'cookie-parser';
+// import path from "path"
 
 const app = express();
+
+// const _dirname = path.resolve();
 
 app.use(cors({
     origin: "http://localhost:5173",
@@ -34,12 +37,15 @@ app.use("/api/user", userRoutes);
 // GET = Redirection
 app.get("/:id", redirectFromShortUrl)
 
-
-
 // error handler
 app.use(errorHandler);
 
+// app.use(express.static(path.join(_dirname, "/FRONTEND/dist")))
+// app.get('*', (_,res) => {
+//     res.sendFile(path.resolve(_dirname, "FRONTEND", "dist", "index.html"))
+// })
+
 app.listen(3000, () => {
     connectDB()
-    console.log("server is running on http://localhost:3000");
+    console.log(`server is running on ${process.env.APP_URL}`);
 })

@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://url-shortner-backend-g0lg.onrender.com",
     withCredentials: true,
     timeout: 10000,   // 10sec
 });
